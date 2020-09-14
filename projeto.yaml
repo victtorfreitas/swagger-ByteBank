@@ -16,7 +16,7 @@ info:
     name: Suporte
     url: http://localhost:8085/bytebank-api/v1/suporte
     email: suporte@bytebankapi.com
-    
+
 securityDefinitions:
   BasicAuth:
     type: basic
@@ -90,6 +90,43 @@ paths:
           description: Erro no servidor
 
   '/extrato/{agencia}/{numero}/{digito}':
+    get:
+      summary: Consulta Extrato
+      description: Consulta o extrato da conta do cliente.
+      operationId: consultaExtrato
+      security:
+        - BasicAuth: []
+      parameters:
+        - in: path
+          name: agencia
+          type: integer
+          format: int32
+          required: true
+        - in: path
+          name: numero
+          type: integer
+          format: int64
+          required: true
+        - in: path
+          name: digito
+          type: integer
+          format: int32
+          required: true
+        - in: header
+          name: Authorization
+          type: string
+          required: true
+      responses:
+        200:
+          description: Consulta de extrato efetuada com sucesso
+          schema:
+            $ref: '#/definitions/Extrato'
+        400:
+          description: Requisição inválida
+        401:
+          description: Requisição não autorizada
+        500:
+          description: Erro no servidor
 definitions:
   Cliente:
     type: object
