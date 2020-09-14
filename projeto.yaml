@@ -163,6 +163,41 @@ paths:
           description: Requisição não autorizada.
         '500':
           description: Erro no servidor.
+
+  '/transacao/{codigo}':
+    put:
+      summary: Altera a transação
+      description: Altera o valor da transação existente.
+      operationId: alteraValorTransacao
+      security:
+        - BasicAuth: []
+      parameters:
+        - in: path
+          name: codigo
+          type: integer
+          format: int64
+          required: true
+        - in: query
+          name: valor
+          type: number
+          format: double
+          required: true
+        - in: header
+          name: Authorization
+          type: string
+          required: true
+      responses:
+        '204':
+          description: Alteração efeturada com sucesso!
+        '400':
+          description: Requisição inválida.
+        '401':
+          description: Requisição não autorizada.
+        '404':
+          description: Registro não encontrado.
+        '500':
+          description: Erro no servidor.
+
 definitions:
   Cliente:
     type: object
