@@ -24,9 +24,22 @@ securityDefinitions:
 security:
   - BasicAuth: []
 
+consumes:
+  - application/json
+produces:
+  - application/json
+
+tags:
+  - name: Cliente
+  - name: Conta
+  - name: Extrato
+  - name: Transacao
+
 paths:
   '/cliente':
     post:
+      tags:
+        - Cliente
       summary: Cadastra Cliente
       description: Cadastra um novo cliente
       consumes:
@@ -50,6 +63,8 @@ paths:
           description: Erro interno no servidor
   '/conta/{agencia}/{numero}/{digito}/saldo':
     get:
+      tags:
+        - Conta
       summary: Consulta Saldo
       description: Consulta o saldo da conta do cliente.
       operationId: consultaSaldo
@@ -91,6 +106,8 @@ paths:
 
   '/extrato/{agencia}/{numero}/{digito}':
     get:
+      tags:
+        - Extrato
       summary: Consulta Extrato
       description: Consulta o extrato da conta do cliente.
       operationId: consultaExtrato
@@ -130,6 +147,8 @@ paths:
 
   '/transacao':
     post:
+      tags:
+        - Transacao
       summary: Cadastra Transacao na Conta
       description: Cadastra uma transacao de debito ou deposito na conta.
       operationId: cadastraTransacao
@@ -166,6 +185,8 @@ paths:
 
   '/transacao/{codigo}':
     put:
+      tags:
+        - Transacao
       summary: Altera a transação
       description: Altera o valor da transação existente.
       operationId: alteraValorTransacao
@@ -199,6 +220,8 @@ paths:
           description: Erro no servidor.
 
     delete:
+      tags:
+        - Transacao
       summary: Exclui a transação
       description: Exclui a transação existente.
       operationId: excluiTransacao
