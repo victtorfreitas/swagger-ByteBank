@@ -16,6 +16,13 @@ info:
     name: Suporte
     url: http://localhost:8085/bytebank-api/v1/suporte
     email: suporte@bytebankapi.com
+    
+securityDefinitions:
+  BasicAuth:
+    type: basic
+
+security:
+  - BasicAuth: []
 
 paths:
   '/cliente':
@@ -41,7 +48,48 @@ paths:
           description: Requisição inválida
         500:
           description: Erro interno no servidor
+  '/conta/{agencia}/{numero}/{digito}/saldo':
+    get:
+      summary: Consulta Saldo
+      description: Consulta o saldo da conta do cliente.
+      operationId: consultaSaldo
+      security:
+        - BasicAuth: []
+      parameters:
+        - in: path
+          name: agencia
+          type: integer
+          format: int32
+          required: true
+        - in: path
+          name: numero
+          type: integer
+          format: int64
+          required: true
+        - in: path
+          name: digito
+          type: integer
+          format: int32
+          required: true
+        - in: header
+          name: Authorization
+          type: string
+          required: true
+      responses:
+        200:
+          description: Consulta a saldo efetuada com sucesso
+          schema:
+            type: number
+            format: double
+            example: 134.68
+        400:
+          description: Requisição inválida
+        401:
+          description: Requisição não autorizada
+        500:
+          description: Erro no servidor
 
+  '/extrato/{agencia}/{numero}/{digito}':
 definitions:
   Cliente:
     type: object
@@ -88,3 +136,23 @@ definitions:
         example: 101.34
       cliente:
         $ref: '#/definitions/Cliente'
+
+  Transacao:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+      tipo:
+        type: string
+        enum:
+          - debito
+          - deposito
+      valor:
+        type: number
+        format: double
+      data:
+        type: string
+        format: date-time
+      conta:
+        $ref: '#/definitions/Conta'
