@@ -62,3 +62,29 @@ definitions:
         type: string
         format: password
         example: senha123
+      contas:
+        type: array
+        items:
+          $ref: '#/definitions/Conta'
+
+  Conta:
+    type: object
+    properties:
+      agencia:
+        type: integer
+        format: int32
+        example: 975
+      numero:
+        type: integer
+        format: int64
+        example: 784563
+      digito:
+        type: integer
+        format: int32
+        example: 7
+      saldo:
+        type: number
+        format: double
+        example: 101.34
+      cliente:
+        $ref: '#/definitions/Cliente'
