@@ -198,6 +198,34 @@ paths:
         '500':
           description: Erro no servidor.
 
+    delete:
+      summary: Exclui a transação
+      description: Exclui a transação existente.
+      operationId: excluiTransacao
+      security:
+        - BasicAuth: []
+      parameters:
+        - in: path
+          name: codigo
+          required: true
+          type: integer
+          format: int64
+        - in: header
+          name: Authorization
+          type: string
+          required: true
+      responses:
+        '204':
+          description: Exclusão efetuada com sucesso
+        '400':
+          description: Requisição inválida.
+        '401':
+          description: Requisição não autorizada.
+        '404':
+          description: Registro não encontrado.
+        '500':
+          description: Erro no servidor
+
 definitions:
   Cliente:
     type: object
