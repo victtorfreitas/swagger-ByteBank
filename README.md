@@ -13,19 +13,19 @@
 <blockquote>
 <p class="has-line-data" data-line-start="16" data-line-end="17">Quanto mais conheço minha força, menos temo os obstáculos da vida!</p>
 </blockquote>
-<p class="has-line-data" data-line-start="18" data-line-end="19">A partir desse projeto pretendo gerar o código de uma API e costumizalo a ponto de poder usar esse projeto como exemplo.</p>
+<p class="has-line-data" data-line-start="18" data-line-end="19">A partir desse projeto pretendo gerar o código de uma API e costumiza-lo a ponto de poder usar esse projeto como exemplo.</p>
 <h3 class="code-line" data-line-start=20 data-line-end=21 ><a id="Tecnologia_20"></a>Tecnologia</h3>
 <p class="has-line-data" data-line-start="22" data-line-end="23">Swagger se tornará um projeto Java, mas por enquanto utilizamos apenas o editor Swagger:</p>
 <ul>
 <li class="has-line-data" data-line-start="24" data-line-end="26"><a href="https://editor.swagger.io/">Swagger-editor</a> - Editor prático e intuitivo do próprio criador!</li>
 </ul>
-<p class="has-line-data" data-line-start="26" data-line-end="27">E claro o projeto <a href="https://petstore.swagger.io/?_ga=2.96884639.1854833955.1600172486-1632579295.1599943220">Swagger</a> é open source.</p>
+<p class="has-line-data" data-line-start="26" data-line-end="27">E claro o projeto <a href="https://petstore.swagger.io/?_ga=2.96884639.1854833955.1600172486-1632579295.1599943220">Swagger</a> é Open Source.</p>
 <h3 class="code-line" data-line-start=28 data-line-end=29 ><a id="Execuo_28"></a>Execução</h3>
 <p class="has-line-data" data-line-start="30" data-line-end="31">Para executar o projeto basta acessar <a href="https://editor.swagger.io/">Swagger-editor</a> e colar o código do arquivo projeto.yaml</p>
 <h3 class="code-line" data-line-start=32 data-line-end=33 ><a id="Autor_32"></a>Autor</h3>
 <ul>
 <li class="has-line-data" data-line-start="34" data-line-end="36">Victtor Araújo Freitas</li>
 </ul>
-<h2 class="code-line" data-line-start=36 data-line-end=38 ><a id="Licensa_36"></a>Licensa</h2>
+<h2 class="code-line" data-line-start=36 data-line-end=38 ><a id="Licensa_36"></a>Licença</h2>
 <p class="has-line-data" data-line-start="38" data-line-end="39">MIT</p>
 <p class="has-line-data" data-line-start="40" data-line-end="41"><strong>Software Livre, É isto!</strong></p>
